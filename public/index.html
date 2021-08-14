@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <nav>
+      <h2 id="logo">Nile Jones</h2>
+      <!-- <ul class="navigation-items">
+        <li class="navigation-item"><a href="#about-me">About Me</a></li>
+        <li class="navigation-item"><a href="#projects">Projects</a></li>
+        <li class="navigation-item"><a href="#skills">Skills</a></li>
+        <li class="navigation-item"><a href="/contact.html">Contact</a></li>
+      </ul> -->
+    </nav>
+
+    <main>
+      <section id="about-me">
+        <div class="about-me-container">
+          <div class="about-me-text-container">
+            <h2>About Me</h2>
+            <p>
+              Hi! I'm Nile, a 23 year-old aspiring full-stack software developer from Los Angeles. 
+              I'm a former premed student that graduated from Cornell University last year, now 
+              interested in technology. 
+            </p>
+            <p>  
+              I became intrigued by computer science and technology since completing a systems
+              biology intership at Harvard last summer, and have dedicated the last year to building the 
+              skills needed to become a developer.
+            </p>
+            <p>
+              In my free time I like to play piano and read books ranging from physics to memoirs. 
+            </p>
+            <p>
+              Just as others have inspired me, I hope to one day encourage others 
+              to pursue their interests as well.
+            </p>
+            <p>
+              Fun fact! I've been programing for
+              <span id="time-container">0</span> seconds!
+            </p>
+          </div>
+          <div class="about-me-image-container">
+            <img
+              src="./images/ambassador.jpg"
+              alt="A photo of Nile Jones"
+              class="portrait"
+            />
+            <span class="network-icons">
+              <!-- <a href="https://github.com/jonesy346"><img class="network-icon" src="./images/github-brands.svg" alt="github"></a>
+              <a href="https://www.linkedin.com/in/jonesy346/"><img class="network-icon" src="./images/linkedin-in-brands.svg" alt="linked-in"></a>
+              <a href="mailto:nnj9@gmail.com"><img class="network-icon" src="./images/inbox-solid.svg" alt="email"></a>
+              <a href=""><img class="network-icon" src="./images/file-pdf-solid.svg" alt="resume"></a> -->
+
+              <a href="https://github.com/jonesy346" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-lg"></i></a>
+              <a href="https://www.linkedin.com/in/jonesy346/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
+              <a href="mailto:nnj9@cornell.edu" target="_blank" rel="noopener noreferrer"><i class="fas fa-inbox fa-lg"></i></a>
+              <a href="./files/Nile_Jones_Resume.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf fa-lg"></i></a>
+
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <details class="project">
+          <summary class="project-title">
+            <h3><a href="https://geekclique.herokuapp.com" target="_blank" rel="noopener noreferrer">GeekClique</a>, a group messaging chat app</h3>
+          </summary>
+        </details>
+        <details class="project">
+          <summary class="project-title">
+            <h3><a href="https://cornellsurgicalsociety.herokuapp.com" target="_blank" rel="noopener noreferrer">Cornell Surgical Society Store</a>, an ecommerce store web app</h3>
+          </summary>
+        </details>
+        <details class="project">
+          <summary class="project-title">
+            <h3><a href="https://youstreamreact.herokuapp.com" target="_blank" rel="noopener noreferrer">YouStream</a>, a third-party API web app</h3>
+          </summary>
+        </details>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div id="skills-container">
+          <i class="fab fa-html5"></i>
+          <i class="fab fa-css3-alt"></i>
+          <i class="fab fa-js"></i>
+          <i class="fab fa-react"></i>
+          <i class="fab fa-python"></i>
+          <i class="fab fa-git"></i>
+          <i class="fab fa-npm"></i>
+          <i class="fab fa-node"></i>
+        </div>
+      </section>
+
+    </main>
+  </body>
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const START_DAY = "08-01-2020";
+    const START_DAY_DATE = new Date(START_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - START_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
+</html>
