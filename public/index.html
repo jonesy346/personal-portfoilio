@@ -25,26 +25,26 @@
           <div class="about-me-text-container">
             <h2>About Me</h2>
             <p>
-              Hi! I'm Nile, a 23 year-old aspiring full-stack software developer from Los Angeles. 
-              I'm a former premed student that graduated from Cornell University last year, now 
-              interested in technology. 
+              Hi! I'm Nile, a 25 year-old full-stack software developer from Los Angeles. 
+              I'm a former premed student that graduated from Cornell University in 2020.
             </p>
             <p>  
               I became intrigued by computer science and technology since completing a systems
-              biology intership at Harvard last summer, and have dedicated the last year to building the 
+              biology intership at Harvard in 2020, and have dedicated the last few years to building the 
               skills needed to become a developer.
             </p>
             <p>
-              In my free time I like to play piano and read books ranging from physics to memoirs. 
+              In my free time I like to create glasswork in the hotshop and play the violin. 
             </p>
             <p>
               Just as others have inspired me, I hope to one day encourage others 
               to pursue their interests as well.
             </p>
-            <p>
+            <!-- Bring this paragraph element back when script is working. Perhaps instead of seconds, say 3 years, 5 months, 4 hours, etc.?  -->
+            <!-- <p>
               Fun fact! I've been programing for
               <span id="time-container">0</span> seconds!
-            </p>
+            </p> -->
           </div>
           <div class="about-me-image-container">
             <img
@@ -53,15 +53,10 @@
               class="portrait"
             />
             <span class="network-icons">
-              <!-- <a href="https://github.com/jonesy346"><img class="network-icon" src="./images/github-brands.svg" alt="github"></a>
-              <a href="https://www.linkedin.com/in/jonesy346/"><img class="network-icon" src="./images/linkedin-in-brands.svg" alt="linked-in"></a>
-              <a href="mailto:nnj9@gmail.com"><img class="network-icon" src="./images/inbox-solid.svg" alt="email"></a>
-              <a href=""><img class="network-icon" src="./images/file-pdf-solid.svg" alt="resume"></a> -->
-
-              <a href="https://github.com/jonesy346" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-lg"></i></a>
-              <a href="https://www.linkedin.com/in/jonesy346/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
-              <a href="mailto:nnj9@cornell.edu" target="_blank" rel="noopener noreferrer"><i class="fas fa-inbox fa-lg"></i></a>
-              <a href="./files/Nile_Jones_Resume.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf fa-lg"></i></a>
+              <a href="mailto:nnj9@cornell.edu" title="Email link" target="_blank" rel="noopener noreferrer"><i class="fas fa-inbox fa-lg"></i></a>
+              <a href="https://www.linkedin.com/in/nilenjones/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in fa-lg"></i></a>
+              <a href="https://github.com/jonesy346" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-lg"></i></a>
+              <a href="./files/Nile_Jones_Resume.pdf" title="Resume link" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf fa-lg"></i></a>
 
             </span>
           </div>
@@ -72,32 +67,37 @@
         <h2>Projects</h2>
         <details class="project">
           <summary class="project-title">
-            <h3><a href="https://geekclique.herokuapp.com" target="_blank" rel="noopener noreferrer">GeekClique</a>, a group messaging chat app</h3>
+            <h3><a href="https://geekclique.azurewebsites.net" target="_blank" rel="noopener noreferrer">GeekClique</a>, a group messaging chat app</h3>
           </summary>
         </details>
         <details class="project">
           <summary class="project-title">
-            <h3><a href="https://cornellsurgicalsociety.herokuapp.com" target="_blank" rel="noopener noreferrer">Cornell Surgical Society Store</a>, an ecommerce store web app</h3>
+            <h3><a href="https://cornellsurgicalsociety.azurewebsites.net" target="_blank" rel="noopener noreferrer">Cornell Surgical Society Store</a>, an ecommerce store web app</h3>
           </summary>
         </details>
         <details class="project">
           <summary class="project-title">
-            <h3><a href="https://youstreamreact.herokuapp.com" target="_blank" rel="noopener noreferrer">YouStream</a>, a third-party API web app</h3>
+            <h3><a href="https://github.com/jonesy346/MonoRec" target="_blank" rel="noopener noreferrer">MonoRec</a>, a hospital management app</h3>
+          </summary>
+        </details>
+        <details class="project">
+          <summary class="project-title">
+            <h3><a href="https://github.com/jonesy346/YouStream" target="_blank" rel="noopener noreferrer">YouStream</a>, a third-party API web app</h3>
           </summary>
         </details>
       </section>
 
+      <!-- Can add hobbies section mentioning glassblowing and violin here perhaps. May have to expand site or add more tabs in the top right corner. -->
+
       <section id="skills">
         <h2>Skills</h2>
         <div id="skills-container">
-          <i class="fab fa-html5"></i>
-          <i class="fab fa-css3-alt"></i>
-          <i class="fab fa-js"></i>
-          <i class="fab fa-react"></i>
-          <i class="fab fa-python"></i>
-          <i class="fab fa-git"></i>
-          <i class="fab fa-npm"></i>
-          <i class="fab fa-node"></i>
+          <img src="./images/c-3.svg" alt="Girl in a jacket" title="C++" width="32" height="36">
+          <img src="./images/c-sharp.png" alt="" title="C#" width="32" height="36">
+          <img src="./images/js.png" title="JavaScript" width="32" height="32">
+          <img src="./images/python.png" title="Python" width="32" height="32">
+          <img src="./images/React-icon.png" title="ReactJS" width="32" height="32">
+          <img src="./images/git.svg" title="Git" width="32" height="32">
         </div>
       </section>
 
@@ -110,8 +110,14 @@
     const intlNumberFormatter = new Intl.NumberFormat("en-US");
 
     setInterval(() => {
-      const now = new Date();
-      const difference = Math.floor(
+      let now = new Date();
+      let differenceTest = now.getTime();
+
+      // Use/modify these lines for figuring out why script isn't working.
+      // console.log(differenceTest);
+      // console.log(START_DAY_DATE.getTime());
+
+      let difference = Math.floor(
         (now.getTime() - START_DAY_DATE.getTime()) / 1000
       );
 
