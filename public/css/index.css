@@ -169,6 +169,12 @@ a {
   margin-top: var(--spacing-1);
 }
 
+#skills-container img {
+  max-height: 100%;
+  width: auto;
+
+}
+
 @media only screen and (max-width: 600px) {
   .about-me-container {
     flex-direction: column;
